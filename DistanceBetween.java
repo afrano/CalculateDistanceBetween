@@ -15,7 +15,7 @@ import static jdk.nashorn.internal.objects.NativeMath.round;
 public class DistanceBetween {
 
     public static void main(String[] args) {
-        System.out.println(" Jarak Univ Sadhar ke Tugu Jogja : " + getDistanceBetween(-7.778056, 110.3857267, -7.782865, 110.367084, "K") + " Kilometers\n");
+        System.out.println("Jarak Univ Sadhar ke Tugu Jogja : " + getDistanceBetween(-7.778056, 110.3857267, -7.782865, 110.367084, "K") + " Kilometers\n");
     }
 
     public static double getDistanceBetween(double latitude1, double longitude1, double latitude2, double longitude2, String unit) {
