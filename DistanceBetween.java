@@ -10,29 +10,23 @@ import static jdk.nashorn.internal.objects.NativeMath.round;
 
 /**
  *
- * @author MC2
+ * @author nano
  */
 public class DistanceBetween {
 
     public static void main(String[] args) {
-        System.out.println("Jarak Univ Sadhar ke Tugu Jogja : " + getDistanceBetween(-7.778056, 110.3857267, -7.782865, 110.367084, "K") + " Kilometers\n");
+        System.out.println("Jarak Univ Sadhar ke Tugu Jogja : " + getDistanceBetween(-7.778056, 110.3857267, -7.782865, 110.367084) + " Kilometer\n");
     }
 
-    public static double getDistanceBetween(double latitude1, double longitude1, double latitude2, double longitude2, String unit) {
+    public static double getDistanceBetween(double latitude1, double longitude1, double latitude2, double longitude2) {
         double theta = longitude1 - longitude2;
-        double distance = (Math.sin(deg2rad(latitude1)) * Math.sin(deg2rad(latitude2))) + (Math.cos(deg2rad(latitude1)) * Math.cos(deg2rad(latitude2)) * cos(deg2rad(theta)));
-        distance = Math.acos(distance);
-        distance = rad2deg(distance);
-        distance = distance * 60 * 1.1515;
-        if ("K".equals(unit)) {
-            distance = distance * 1.609344;
-        } else if ("N".equals(unit)) {
-            distance = distance * 0.8684;
-        }
-        return (distance);
-
+        double Jarak = (Math.sin(deg2rad(latitude1)) * Math.sin(deg2rad(latitude2))) + (Math.cos(deg2rad(latitude1)) * Math.cos(deg2rad(latitude2)) * cos(deg2rad(theta)));
+        Jarak = Math.acos(Jarak);
+        Jarak = rad2deg(Jarak);
+        Jarak = Jarak * 60 * 1.1515;
+        double JarakTotal = Jarak * 1.609344;
+        return (JarakTotal);
     }
-
     // function untuk converts derajat ke radian 
     private static double deg2rad(double deg) {
         return (deg * Math.PI / 180.0);
